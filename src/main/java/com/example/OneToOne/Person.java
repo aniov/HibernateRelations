@@ -40,6 +40,14 @@ public class Person {
         this.someData = someData;
     }
 
+    public CreditCard getCreditCard() {
+        return creditCard;
+    }
+
+    public void setCreditCard(CreditCard creditCard) {
+        this.creditCard = creditCard;
+    }
+
     @Override
     public String toString() {
         return "Person{" +

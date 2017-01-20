@@ -45,24 +45,24 @@ public class TestOne {
         CreditCard creditCardResult = creditCardRepository.findOne(creditCard.getId());
 
         Assert.assertNotNull(creditCardResult);
-        //System.out.println(creditCardResult);
     }
 
     @Test
     public void testRepository(){
 
-        /** */
         List<CreditCard> creditCards = creditCardRepository.findAll();
         System.out.println("Credit cards Result:\n");
         Assert.assertNotNull(creditCards + "\n");
 
+        /** Search person after CreditCard number*/
         List<Person> personList = personRepository.findByCreditCardCardNumber(12345);
         System.out.println("Person List searched after CreditCard-cardNumber:\n" + personList +"\n");
 
+        /** Search CreditCard after Person id*/ /** Using bi-directional relation*/
         CreditCard creditCard = creditCardRepository.findByPersonSomeData("text_one");
         System.out.println("CreditCard searched after Person-someData:\n" + creditCard + "\n");
 
-
+        System.out.println("Access Person someData from creditCard:\n" + creditCard.getPerson().getSomeData() + "\n");
 
     }
 
