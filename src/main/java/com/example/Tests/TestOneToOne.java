@@ -21,7 +21,7 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Transactional
-public class TestOne {
+public class TestOneToOne {
 
     @Autowired
     PersonRepository personRepository;
@@ -34,13 +34,18 @@ public class TestOne {
     public void createPersonAndCreditCard(){
 
         Person person = new Person("text_one");
+        Person person1 = new Person("text_two");
         /** We have to save person to DB if we don't use cascade = CascadeType.ALL in CreditCard Entity*/
         /** personRepository.save(person); */
 
         CreditCard creditCard = new CreditCard(12345);
+        CreditCard creditCard1 = new CreditCard(66666);
+
         creditCard.setPerson(person);
+        creditCard1.setPerson(person1);
 
         creditCardRepository.save(creditCard);
+        creditCardRepository.save(creditCard1);
 
         CreditCard creditCardResult = creditCardRepository.findOne(creditCard.getId());
 
