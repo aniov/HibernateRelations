@@ -15,6 +15,7 @@ public class Book {
 
     private String title;
 
+    /** Bi-directional association*/
     @ManyToMany(mappedBy = "books", cascade = CascadeType.ALL)
     private List<Writer> writers;
 

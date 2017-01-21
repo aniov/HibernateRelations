@@ -4,7 +4,6 @@ import com.example.OneToMany.Car;
 import com.example.OneToMany.Driver;
 import com.example.Repository.CarRepository;
 import com.example.Repository.DriverRepository;
-import org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by Marius on 1/21/2017.

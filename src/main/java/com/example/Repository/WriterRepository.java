@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface WriterRepository extends JpaRepository<Writer, Integer>{
+    Writer findByName(String name);
 }

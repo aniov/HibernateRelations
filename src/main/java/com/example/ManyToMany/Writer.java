@@ -15,8 +15,9 @@ public class Writer {
 
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "writer_book", joinColumns = {@JoinColumn(name = "writer_id")}, inverseJoinColumns = {@JoinColumn(name = "book_id")})
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "writer_book", joinColumns = @JoinColumn(name = "writer_id", referencedColumnName = "id"),
+                                     inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
     private List<Book> books;
 
     public Writer() {
